@@ -3,7 +3,6 @@
 import sys, os, os.path, argparse
 
 from shared.config import *
-from shared.utils import *
 from objects.myparser import MyParser
 
 GIT_REPO="https://github.com/viliusl/dockery"

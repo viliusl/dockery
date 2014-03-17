@@ -1,14 +1,14 @@
 import os
 import subprocess
 
-class AppType(object):
+class AppType:
     HTTP = 1,
     SSH = 2,
     OTHER = 3
 
 class Container(object):
     """ Represents single docker container/machine. """
-    def __init(self, name, basePort, services):
+    def __init__(self, name, basePort, services):
         self.name = name
         self.basePort = basePort
         self.services = services
