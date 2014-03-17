@@ -17,6 +17,14 @@ class Dockery(object):
         """ Update myself from git repo + update configured docker images - latest and greatest:)
         """
 
+    def handle_list(self, *args):
+        """ Lists managed environments.
+        """
+        for environment in ENVS:
+            print '  %s' % environment.alias
+            for machine in environment.machines:
+                print "\t%s(%s)" % (machine.name, ', '.join(["%s: %s" % (k, v[0]) for k, v in machine.services.items()]))
+
     def handle_start(self, *args):
         """ [alias] Start provided environment.
         """
