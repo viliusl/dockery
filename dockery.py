@@ -16,6 +16,10 @@ class Dockery(object):
     def handle_selfupdate(self, *args):
         """ Update myself from git repo + update configured docker images - latest and greatest:)
         """
+        dpath = os.path.dirname(os.path.realpath(__file__))
+        print "Doing git pull on: '%s'" % dpath 
+        os.system("git --work-tree={0}/ --git-dir={0}/.git pull --all".format(dpath))
+
 
     def handle_list(self, *args):
         """ Lists managed environments.
